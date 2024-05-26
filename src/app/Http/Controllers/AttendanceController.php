@@ -8,6 +8,6 @@ class AttendanceController extends Controller
 {
     public function index()
     {
-        return view('/');
+        return view('index');
     }
 }
