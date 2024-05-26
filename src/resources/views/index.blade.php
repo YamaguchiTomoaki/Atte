@@ -5,4 +5,5 @@
 @endsection
 
 @section('content')
+<div class="test"></div>
 @endsection
