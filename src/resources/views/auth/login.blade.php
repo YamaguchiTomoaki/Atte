@@ -11,7 +11,7 @@
         <form class="login-form" action="/login" method="post">
             @csrf
             <div class="login-form__group">
-                <input class="login-form__input" type="email" name="email" placeholder="メールアドレス">
+                <input class="login-form__input" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
                 <p class="login-form__error-message">
                     @error('email')
                     {{ $message }}
