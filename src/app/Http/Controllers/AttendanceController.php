@@ -17,11 +17,42 @@ class AttendanceController extends Controller
     public function index()
     {
         $user = Auth::user();
-        //$workstart = Attendance::
-        // 下記はテスト用
-        $status['id'] = 'null';
-        //return view('index', compact('user', 'attendance'));
-        return view('index', compact('user', 'status'));
+        $date = Carbon::now()->format('Y-m-d');
+        // 勤務開始ボタンステータスチェック用
+        $work = Attendance::where([
+            ['user_id', '=', $user['id']],
+            ['date', '=', $date],
+        ])->first();
+        // 該当のレコードが無い場合エラーになる為、nullを代入
+        if ($work == null) {
+            $work['id'] = 'null';
+            $work['start_time'] = 'null';
+        }
+        $break = Breaks::where([
+            ['attendance_id', '=', $work['id']],
+        ])->whereNull('break_end')->first();
+
+        // Breaksテーブルに該当のレコードが無い場合
+        if ($break == null) {
+            $break['break_end'] = 'null';
+        }
+
+        // 勤務開始が無いとき or 勤務終了があるとき or 休憩終了が無いとき
+        if ($work['start_time'] == 'null' || $work['end_time'] != null || $break['break_end'] == null) {
+            // 休憩開始ボタン不可
+            $breakstartstatus = 1;
+        } else {
+            // 休憩開始ボタン可
+            $breakstartstatus = 0;
+        }
+
+        if ($breakstartstatus == 0 || $work['start_time'] == 'null' || $work['end_time'] != null) {
+            $breakendstatus  = 1;
+        } else {
+            $breakendstatus = 0;
+        }
+
+        return view('index', compact('user', 'work', 'breakstartstatus', 'breakendstatus'));
     }
 
     public function workStart(Request $request)
