@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\BreakController;
+use App\Models\Attendance;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
+    Route::post('/workstart', [AttendanceController::class, 'workStart']);
+    Route::post('/workend', [AttendanceController::class, 'workEnd']);
+    Route::post('/breakstart', [BreakController::class, 'breakStart']);
+    Route::post('/breakend', [BreakController::class, 'breakEnd']);
 });

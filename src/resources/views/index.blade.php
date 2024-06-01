@@ -6,26 +6,35 @@
 
 @section('content')
 <div class="index__content">
-    <h2 class="user-name">{{ Auth::user()->name }}さんお疲れ様です！</h2>
+    <var_dump>{{$status['id']}}</var_dump>
+    <h2 class="user-name">{{ $user['name'] }}さんお疲れ様です！</h2>
     <div class="attendance__content">
         <div class="work__start">
-            <form class="work__start-form" action="/start" method="post">
+            <form class="work__start-form" action="/workstart" method="post">
+                @csrf
                 <button class="start__button" type="submit">勤務開始</button>
+                <input type="hidden" name="user_id" value="{{ $user['id'] }}">
             </form>
         </div>
         <div class="work__end">
-            <form class="work__end-form" action="/end" method="post">
+            <form class="work__end-form" action="/workend" method="post">
+                @csrf
                 <button class="end__button" type="submit">勤務終了</button>
+                <input type="hidden" name="user_id" value="{{ $user['id'] }}">
             </form>
         </div>
         <div class="break__start">
             <form class="break__start-form" action="/breakstart" method="post">
+                @csrf
                 <button class="breakstart__button" type="submit">休憩開始</button>
+                <input type="hidden" name="user_id" value="{{ $user['id'] }}">
             </form>
         </div>
         <div class="break__end">
             <form class="break__end-form" action="/breakend" method="post">
+                @csrf
                 <button class="breakend__button" type="submit">休憩終了</button>
+                <input type="hidden" name="user_id" value="{{ $user['id'] }}">
             </form>
         </div>
     </div>
