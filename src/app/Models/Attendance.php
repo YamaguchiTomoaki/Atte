@@ -13,7 +13,7 @@ class Attendance extends Model
         'id',
     ];
 
-    public function attendance()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

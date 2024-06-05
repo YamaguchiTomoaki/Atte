@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BreakController;
+use App\Http\Controllers\DateviewController;
 use App\Models\Attendance;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/workend', [AttendanceController::class, 'workEnd']);
     Route::post('/breakstart', [BreakController::class, 'breakStart']);
     Route::post('/breakend', [BreakController::class, 'breakEnd']);
+    Route::get('/attendance', [DateviewController::class, 'DateView']);
+    //Route::get('/attendance', [DateviewController::class, 'index']);
 });

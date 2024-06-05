@@ -13,7 +13,7 @@ class Breaks extends Model
         'id',
     ];
 
-    public function breaks()
+    public function attendance()
     {
         return $this->belongsTo(Attendance::class);
     }
