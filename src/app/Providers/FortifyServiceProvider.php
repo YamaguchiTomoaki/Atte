@@ -13,6 +13,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Http\Requests\LoginRequest;
+use App\Http\Requests\OriginalLoginRequest;
 
 class FortifyServiceProvider extends ServiceProvider
 {
