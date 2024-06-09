@@ -6,7 +6,17 @@
 
 @section('content')
 <div class="attendance__content">
-    <!--ページネーション記載-->
+    <div class="date__search">
+        <form class="datebefore-form" action="/datebefore" method="get">
+            <button class="before__button" type="submit">＜</button>
+            <input type="hidden" name="date" value="{{ $date }}">
+        </form>
+        {{ $date }}
+        <form class="dateafter-form" action="/dateafter" method="get">
+            <button class="after__button" type="submit">＞</button>
+            <input type="hidden" name="date" value="{{ $date }}">
+        </form>
+    </div>
     <div class="content-table">
         <table class="content-table__inner">
             <tr class="content-table__row">
@@ -26,26 +36,30 @@
                     勤務時間
                 </th>
             </tr>
-            @for ($id = 0; $id < $count; $id++) <tr class="content-table__row">
+            @for ($id = $idcount; $id < $count; $id++) <tr class="content-table__row">
+                @if ($paginatedData[$id] == null)
+                @break
+                @endif
                 <td class="content-table__item">
-                    {{ $attendanceArray[$id]['user']['name'] }}
+                    {{ $paginatedData[$id]['user']['name'] }}
                 </td>
                 <td class="content-table__item">
-                    {{ $attendanceArray[$id]['start_time'] }}
+                    {{ $paginatedData[$id]['start_time'] }}
                 </td>
                 <td class="content-table__item">
-                    {{ $attendanceArray[$id]['end_time'] }}
+                    {{ $paginatedData[$id]['end_time'] }}
                 </td>
                 <td class="content-table__item">
-                    {{ $attendanceArray[$id]['break_time'] }}
+                    {{ $paginatedData[$id]['break_time'] }}
                 </td>
                 <td class="content-table__item">
-                    {{ $attendanceArray[$id]['work_time'] }}
+                    {{ $paginatedData[$id]['work_time'] }}
                 </td>
                 </tr>
                 @endfor
         </table>
-        <!--ページネーション-->
+        {{ $paginatedData->withQueryString()->links() }}
+
     </div>
 </div>
 @endsection

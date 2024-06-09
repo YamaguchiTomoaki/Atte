@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+}
+
+.page-item {
+    border: 1px solid #8B7969;
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.page-link {
+    text-decoration: none;
+    color: #82756A;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+span.page-link {
+    color: #fff;
+}
+
+.active {
+    background-color: #82756A;
+}

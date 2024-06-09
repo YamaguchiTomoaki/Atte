@@ -24,5 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/breakstart', [BreakController::class, 'breakStart']);
     Route::post('/breakend', [BreakController::class, 'breakEnd']);
     Route::get('/attendance', [DateviewController::class, 'DateView']);
-    //Route::get('/attendance', [DateviewController::class, 'index']);
+    Route::get('/datebefore', [DateviewController::class, 'DateBefore']);
+    Route::get('/dateafter', [DateviewController::class, 'DateAfter']);
 });

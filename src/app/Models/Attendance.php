@@ -17,4 +17,11 @@ class Attendance extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function scopeDateSearch($query, $date)
+    {
+        if (!empty($date)) {
+            $query->where('date', '=', $date);
+        }
+    }
 }
