@@ -11,7 +11,7 @@
             <button class="before__button" type="submit">＜</button>
             <input type="hidden" name="date" value="{{ $date }}">
         </form>
-        {{ $date }}
+        <p class="displaydate">{{ $date }}</p>
         <form class="dateafter-form" action="/dateafter" method="get">
             <button class="after__button" type="submit">＞</button>
             <input type="hidden" name="date" value="{{ $date }}">

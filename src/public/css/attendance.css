@@ -1,22 +1,86 @@
+.attendance__content {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.date__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.datebefore-form {
+    width: 40px;
+    height: 30px;
+}
+
+.before__button {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    color: #2384CF;
+    border: 1px solid #2384CF;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.dateafter-form {
+    width: 40px;
+    height: 30px;
+}
+
+.after__button {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    color: #2384CF;
+    border: 1px solid #2384CF;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.displaydate {
+    font-weight: bold;
+    margin: 50px;
+    font-size: 20px;
+}
+
+.content-table {
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.content-table__inner {
+    width: 100%;
+}
+
+.content-table__row {
+    border-top: 1px solid #000;
+    height: 80px;
+}
+
+/*ページネーション*/
 .pagination {
     display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: 30px auto;
 }
 
 .page-item {
-    border: 1px solid #8B7969;
+    border: 1px solid #ddd;
     background-color: #fff;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
-    text-align: center;
-    vertical-align: middle;
 }
 
 .page-link {
     text-decoration: none;
-    color: #82756A;
+    color: #2384CF;
     display: inline-block;
-    vertical-align: sub;
+    line-height: 2.4;
 }
 
 span.page-link {
@@ -24,5 +88,5 @@ span.page-link {
 }
 
 .active {
-    background-color: #82756A;
+    background-color: #2384CF;
 }
