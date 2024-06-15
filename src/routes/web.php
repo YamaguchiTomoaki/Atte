@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BreakController;
+use App\Http\Controllers\ConfirmationController;
 use App\Http\Controllers\DateviewController;
 use App\Models\Attendance;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +21,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Auth::routes(['verify' => true]);
+Route::get('/confirmation', [ConfirmationController::class, 'confirmation']);
+/*Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');:*/
+
+Route::middleware('verified')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
     Route::post('/workstart', [AttendanceController::class, 'workStart']);
     Route::post('/workend', [AttendanceController::class, 'workEnd']);

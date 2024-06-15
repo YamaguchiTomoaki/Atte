@@ -58,6 +58,15 @@
 .content-table__row {
     border-top: 1px solid #000;
     height: 80px;
+    text-align: left;
+}
+
+.content-table__header {
+    padding-left: 50px;
+}
+
+.content-table__item {
+    padding-left: 50px;
 }
 
 /*ページネーション*/
@@ -65,7 +74,7 @@
     display: flex;
     width: 50%;
     justify-content: center;
-    margin: 30px auto;
+    margin: 50px auto;
 }
 
 .page-item {

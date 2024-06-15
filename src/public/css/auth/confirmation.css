@@ -1,0 +1,20 @@
+.confirmation__content {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.confitmation__message {
+    margin-top: 180px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    border: 1px solid #214BE0;
+    border-radius: 5px;
+    background-color: #214BE0;
+    color: #fff;
+    cursor: pointer;
+}
