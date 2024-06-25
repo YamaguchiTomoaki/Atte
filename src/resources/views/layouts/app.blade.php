@@ -26,6 +26,11 @@
                     <li class="header-nav__item">
                         <a class="header-nav__link" href="/attendance">日付一覧</a>
                     </li>
+                    </li>
+                    <li class="header-nav__item">
+                        <a class="header-nav__link" href="/userlist">ユーザー一覧</a>
+                    </li>
+                    </li>
                     <li class="header-nav__item">
                         <form class="form__logout" action="/logout" method="post">
                             @csrf

@@ -23,7 +23,7 @@ main {
 
 .header-nav {
     display: flex;
-    width: 300px;
+    width: 500px;
     justify-content: space-around;
 }
 

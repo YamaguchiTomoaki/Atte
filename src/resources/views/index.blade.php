@@ -18,7 +18,7 @@
         <div class="work__end">
             <form class="work__end-form" action="/workend" method="post">
                 @csrf
-                <button class="end__button" type="submit" {{ $work['start_time'] == 'null' ? 'disabled' : '' }}>勤務終了</button>
+                <button class="end__button" type="submit" {{ $workendstatus == 1 ? 'disabled' : '' }}>勤務終了</button>
                 <input type="hidden" name="user_id" value="{{ $user['id'] }}">
             </form>
         </div>

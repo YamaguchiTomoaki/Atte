@@ -24,4 +24,11 @@ class Attendance extends Model
             $query->where('date', '=', $date);
         }
     }
+
+    public function scopeUserSearch($query, $user)
+    {
+        if (!empty($user)) {
+            $query->where('user_id', '=', $user);
+        }
+    }
 }

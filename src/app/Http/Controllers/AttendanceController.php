@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attendance;
 use App\Models\Breaks;
+
 use Illuminate\Http\Request;
 
 // Auth::user()使用の為、use
@@ -46,12 +47,20 @@ class AttendanceController extends Controller
         }
 
         if ($breakstartstatus == 0 || $work['start_time'] == 'null' || $work['end_time'] != null) {
+            // 休憩終了ボタン不可
             $breakendstatus  = 1;
         } else {
+            // 休憩開始ボタン可
             $breakendstatus = 0;
         }
 
-        return view('index', compact('user', 'work', 'breakstartstatus', 'breakendstatus'));
+        if ($work['start_time'] == 'null' || $breakendstatus == 0 || $work['end_time'] != null) {
+            $workendstatus = 1;
+        } else {
+            $workendstatus = 0;
+        }
+
+        return view('index', compact('user', 'work', 'breakstartstatus', 'breakendstatus', 'workendstatus'));
     }
 
     public function workStart(Request $request)

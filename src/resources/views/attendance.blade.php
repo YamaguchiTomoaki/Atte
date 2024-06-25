@@ -36,10 +36,7 @@
                     勤務時間
                 </th>
             </tr>
-            @for ($id = $idcount; $id < $count; $id++) <tr class="content-table__row">
-                @if ($paginatedData[$id] == null)
-                @break
-                @endif
+            @for ($id = $idcount; $id < $count; $id++) @if ($paginatedData[$id]==null) @break @endif <tr class="content-table__row">
                 <td class="content-table__item">
                     {{ $paginatedData[$id]['user']['name'] }}
                 </td>

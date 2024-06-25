@@ -67,6 +67,7 @@
 
 .content-table__item {
     padding-left: 50px;
+    width: 100px;
 }
 
 /*ページネーション*/

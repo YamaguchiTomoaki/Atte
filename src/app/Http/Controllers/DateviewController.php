@@ -12,15 +12,12 @@ use Illuminate\Pagination\Paginator;
 
 class DateviewController extends Controller
 {
-    public function DateView(Request $request)
+    public function dateView(Request $request)
     {
         // デフォルトの日付取得処理
         $date = Carbon::now()->format('Y-m-d');
-        //$date = new Carbon('2024-06-08 09:00:00');
-        //$date = $date->format('Y-m-d');
         // Attendancesテーブルと主テーブルのUsersのnameを取得
         $attendances = Attendance::with('user:id,name')->DateSearch($date)->get();
-        //$attendances = Attendance::with('user:id,name')->DateSearch($date)->Paginate(5);
         // toArrayで配列に変換
         $attendanceArray = $attendances->toArray();
         // 配列の要素数取得
@@ -55,7 +52,6 @@ class DateviewController extends Controller
         $attendancecollection = collect($attendanceArray);
         $perPage = 5;
         $page = Paginator::resolveCurrentPage('page');
-        //$pageData = $attendancecollection->slice(($page - 1) * $perPage);
         $options = [
             'path' => Paginator::resolveCurrentPath(),
             'pageName' => 'page'
@@ -79,7 +75,7 @@ class DateviewController extends Controller
         return view('attendance', compact('paginatedData', 'count', 'date', 'idcount'));
     }
 
-    public function DateBefore(Request $request)
+    public function dateBefore(Request $request)
     {
         $date = $request->only('date');
         $date = new Carbon($date['date']);
@@ -144,7 +140,7 @@ class DateviewController extends Controller
         ));
     }
 
-    public function DateAfter(Request $request)
+    public function dateAfter(Request $request)
     {
         $date = $request->only('date');
         $date = new Carbon($date['date']);

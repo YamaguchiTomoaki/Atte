@@ -1,0 +1,55 @@
+.userpage__content {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.userpage__title {
+    padding-top: 50px;
+}
+
+.userpage-table__inner {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.userpage-table__row {
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 70px;
+}
+
+.userpage-table__item {
+    height: 70px;
+}
+
+/*ページネーション*/
+.pagination {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.page-item {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.page-link {
+    text-decoration: none;
+    color: #2384CF;
+    display: inline-block;
+    line-height: 2.4;
+}
+
+span.page-link {
+    color: #fff;
+}
+
+.active {
+    background-color: #2384CF;
+}
