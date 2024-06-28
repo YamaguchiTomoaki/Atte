@@ -1,26 +1,37 @@
 .userpage__content {
-    width: 70%;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
 }
 
+.userpage-table {
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
 .userpage__title {
     padding-top: 50px;
+    margin-top: 0;
 }
 
 .userpage-table__inner {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .userpage-table__row {
-    border: 1px solid #000;
-    border-radius: 5px;
-    height: 70px;
+    border-top: 1px solid #000;
+    height: 80px;
+    text-align: left;
+}
+
+.userpage-table__header {
+    padding-left: 50px;
 }
 
 .userpage-table__item {
-    height: 70px;
+    padding-left: 50px;
+    width: 100px;
 }
 
 /*ページネーション*/
