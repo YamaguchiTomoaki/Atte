@@ -12,8 +12,8 @@
 
 　1. docker compose exec php bash  
 　2. composer install  
-  3. 「.env.example」ファイルを「.env」ファイルに命名を変更。又は、新しく「.env」ファイルを作成  
-  4. 「.env」ファイルに以下の環境変数を追加  
+　3. 「.env.example」ファイルを「.env」ファイルに命名を変更。又は、新しく「.env」ファイルを作成  
+　4. 「.env」ファイルに以下の環境変数を追加  
 
   * DB_CONNECTION=mysql
   * DB_HOST=mysql
