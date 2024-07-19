@@ -30,16 +30,13 @@
 
     php artisan migrate
 
-  7. シーティングの実行
-
-    php artisan db:seed
-
 ## 使用技術(実行環境)
 * PHP 8.2.19
 * Laravel 10.48.11
 * MySQL 8.0.26
 
 ## ER図
+![スクリーンショット 2024-07-19 172624](https://github.com/user-attachments/assets/92f1d83c-c80b-4ed6-8945-f72758d6b14b)
 
 ## URL
 * 開発環境：http://localhost/
