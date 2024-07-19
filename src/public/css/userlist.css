@@ -4,6 +4,11 @@
     margin: 0 auto;
 }
 
+.userlist__title {
+    margin: 0px auto;
+    padding: 30px 0 30px;
+}
+
 .userlist-table__inner {
     width: 50%;
     margin: 0 auto;
