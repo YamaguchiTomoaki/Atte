@@ -3,8 +3,8 @@
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BreakController;
 use App\Http\Controllers\ConfirmationController;
-use App\Http\Controllers\DateviewController;
-use App\Http\Controllers\UserlistController;
+use App\Http\Controllers\DateViewController;
+use App\Http\Controllers\UserListController;
 use App\Models\Attendance;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -34,9 +34,9 @@ Route::middleware('verified')->group(function () {
     Route::post('/workend', [AttendanceController::class, 'workEnd']);
     Route::post('/breakstart', [BreakController::class, 'breakStart']);
     Route::post('/breakend', [BreakController::class, 'breakEnd']);
-    Route::get('/attendance', [DateviewController::class, 'dateView']);
-    Route::get('/datebefore', [DateviewController::class, 'dateBefore']);
-    Route::get('/dateafter', [DateviewController::class, 'dateAfter']);
-    Route::get('/userlist', [UserlistController::class, 'userList']);
-    Route::get('/userpage', [UserlistController::class, 'userPage']);
+    Route::get('/attendance', [DateViewController::class, 'dateView']);
+    Route::get('/datebefore', [DateViewController::class, 'dateBefore']);
+    Route::get('/dateafter', [DateViewController::class, 'dateAfter']);
+    Route::get('/userlist', [UserListController::class, 'userList']);
+    Route::get('/userpage', [UserListController::class, 'userPage']);
 });

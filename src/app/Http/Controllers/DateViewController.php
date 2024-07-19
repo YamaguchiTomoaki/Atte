@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
-class DateviewController extends Controller
+class DateViewController extends Controller
 {
     public function dateView(Request $request)
     {

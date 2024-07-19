@@ -11,7 +11,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 
 
-class UserlistController extends Controller
+class UserListController extends Controller
 {
     public function userList()
     {
