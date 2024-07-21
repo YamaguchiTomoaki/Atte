@@ -30,6 +30,11 @@
 
     php artisan migrate
 
+　※上記を全て実行してもサイトにアクセスできない場合  
+　　storageディレクトリの書き込み権限を変更  
+    
+    sudo chmod -R 777 storage/
+
 ## 使用技術(実行環境)
 * PHP 8.2.19
 * Laravel 10.48.11
